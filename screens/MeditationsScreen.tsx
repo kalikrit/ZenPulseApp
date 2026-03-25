@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'rgba(255,255,255,0.5)',
     paddingVertical: 20,
-    marginTop: 20,
+    marginTop: 'auto',
   },
 });
 
