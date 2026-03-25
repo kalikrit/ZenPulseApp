@@ -126,7 +126,7 @@ AI корректно использовал `LinearGradient`, но иногда
 
 ## 📹 Видео процесса разработки
 
-*![видео](screenshots/Screencast.webm)*
+[Скачать видео (Screencast.webm)](screenshots/Screencast.webm)
 
 ## 📄 Лицензия
 
