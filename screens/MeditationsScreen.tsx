@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getAppVersion } from '../config/version';
+import Constants from 'expo-constants';
 import { useSubscription } from '../context/SubscriptionContext';
 import AffirmationModal from '../components/AffirmationModal';
 import type { RootStackParamList } from '../App';
@@ -38,7 +38,15 @@ function isPremiumLocked(item: MeditationItem, isSubscribed: boolean) {
 export default function MeditationsScreen({ navigation }: Props) {
   const { isSubscribed } = useSubscription();
   const [modalVisible, setModalVisible] = useState(false);
-  const versionText = useMemo(() => `Version ${getAppVersion()}`, []);
+  const versionText = useMemo(() => {
+    const version =
+      Constants.expoConfig?.version ??
+      // Backward-compat for older manifest-based configs.
+      (Constants as any).manifest?.version ??
+      '1.1.0';
+
+    return `Version ${version}`;
+  }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({

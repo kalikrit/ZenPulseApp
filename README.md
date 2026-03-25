@@ -8,7 +8,6 @@
 |---------|-----------|------------|
 | ![](screenshots/paywall.jpg) | ![](screenshots/meditations.jpg) | ![](screenshots/ai-mood.jpg) |
 
-*(Замените ссылки на реальные скриншоты после создания)*
 
 ## 🛠️ Технологический стек
 
@@ -36,10 +35,10 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/ZenPulseApp.git
 cd ZenPulseApp
 
 # Установить зависимости
-npm install
+npm install --legacy-peer-deps
 
 # Запустить Metro Bundler
-npx expo start
+npx expo start -c
 ```
 
 ### Запуск на устройстве
