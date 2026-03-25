@@ -41,7 +41,7 @@ npm install --legacy-peer-deps
 npx expo start -c
 
 # запуск в браузере
-expo start --web
+npx expo start --web
 ```
 
 ### Запуск на устройстве
@@ -126,7 +126,7 @@ AI корректно использовал `LinearGradient`, но иногда
 
 ## 📹 Видео процесса разработки
 
-*(Ссылка на видео-скринкаст, где видно работу с AI-чатом и тестирование в эмуляторе)*
+*![видео](screenshots/Screencast.webm)*
 
 ## 📄 Лицензия
 
