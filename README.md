@@ -39,6 +39,9 @@ npm install --legacy-peer-deps
 
 # Запустить Metro Bundler
 npx expo start -c
+
+# запуск в браузере
+expo start --web
 ```
 
 ### Запуск на устройстве
