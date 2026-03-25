@@ -11,7 +11,7 @@
 
 | Paywall | Медитации | AI-настрой |
 |---------|-----------|------------|
-| ![](screenshots/paywall.jpg) | ![](screenshots/meditations.png) | ![](screenshots/ai-mood.jpg) |
+| ![](screenshots/paywall.png) | ![](screenshots/meditations.png) | ![](screenshots/ai-mood.png) |
 
 
 ## 🛠️ Технологический стек
