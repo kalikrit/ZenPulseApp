@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { getAppVersion } from '../config/version';
 import { useSubscription } from '../context/SubscriptionContext';
 import AffirmationModal from '../components/AffirmationModal';
 import type { RootStackParamList } from '../App';
@@ -37,6 +38,7 @@ function isPremiumLocked(item: MeditationItem, isSubscribed: boolean) {
 export default function MeditationsScreen({ navigation }: Props) {
   const { isSubscribed } = useSubscription();
   const [modalVisible, setModalVisible] = useState(false);
+  const versionText = useMemo(() => `Version ${getAppVersion()}`, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -61,6 +63,9 @@ export default function MeditationsScreen({ navigation }: Props) {
         data={data}
         keyExtractor={(item) => item.id}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ListFooterComponent={() => (
+          <Text style={styles.footerText}>{versionText}</Text>
+        )}
         renderItem={({ item }) => {
           const locked = isPremiumLocked(item, isSubscribed);
 
@@ -107,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   listContent: {
+    flexGrow: 1,
     paddingHorizontal: 16,
     paddingTop: 12,
     paddingBottom: 20,
@@ -162,6 +168,13 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '900',
     fontSize: 12,
+  },
+  footerText: {
+    textAlign: 'center',
+    fontSize: 12,
+    color: '#999',
+    paddingVertical: 20,
+    marginTop: 'auto',
   },
 });
 
